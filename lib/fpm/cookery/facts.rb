@@ -28,7 +28,7 @@ module FPM
       end
 
       def self.distname
-        @distname ||= Facter.fact(:lsbdistcodename).value.downcase.to_sym
+        @distname ||= Facter.fact(:operatingsystemmajrelease).value.downcase.to_sym
       end
 
       def self.distname=(value)
