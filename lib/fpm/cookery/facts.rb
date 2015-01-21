@@ -27,6 +27,10 @@ module FPM
         @target = value.to_sym
       end
 
+      def self.distname
+        @distname ||= Facter.fact(:lsbdistcodename).value.downcase.to_sym
+      end
+
       def self.reset!
         instance_variables.each {|v| instance_variable_set(v, nil) }
       end

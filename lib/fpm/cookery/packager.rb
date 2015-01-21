@@ -53,6 +53,7 @@ module FPM
         package_name = "#{recipe.name}-#{recipe.version}"
         platform = FPM::Cookery::Facts.platform
         target = FPM::Cookery::Facts.target
+        distname = FPM::Cookery::Facts.distname
 
         Log.info "Starting package creation for #{package_name} (#{platform}, #{target})"
         Log.info ''

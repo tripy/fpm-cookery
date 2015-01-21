@@ -50,6 +50,10 @@ module FPM
         Array(archs).member?(FPM::Cookery::Facts.arch) and block_given? ? yield : false
       end
 
+      def self.distnames(valid_distnames)
+        Array(valid_distnames).member?(self.distname) and block_given? ? yield : false
+      end
+
       def self.attr_rw_list(*attrs)
         attrs.each do |attr|
           class_eval %Q{
